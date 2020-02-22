@@ -3,26 +3,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using StayupolKnights;
 
 namespace Network
 {
     public class NetworkRoomPipeline : MonoBehaviourPunCallbacks
     {
         [SerializeField] string m_fallBackLevel = "Menu";
-        //public Agent.NetworkedAgentMotor PlayerPrefab;
+        public FirstPersonPlayer PlayerPrefab;
 
         [HideInInspector]
-        //public Agent.NetworkedAgentMotor LocalPlayer;
+        public FirstPersonPlayer LocalPlayer;
         public Transform PlayerSpawn;
 
         private void Start()
         {
             if (!PhotonNetwork.IsConnected)
             {
-                //GameManager.Instance.LoadLevel(m_fallBackLevel, GameManager.eSet.MENU);
+                LoadingScreen.Instance.Show(SceneManager.LoadSceneAsync(m_fallBackLevel));
                 return;
             }
-            //Agent.NetworkedAgentMotor.RefreshInstance(ref LocalPlayer, PlayerPrefab, PlayerSpawn);
+            FirstPersonPlayer.RefreshInstance(ref LocalPlayer, PlayerPrefab, PlayerSpawn);
 
         }
 
@@ -33,7 +34,7 @@ namespace Network
 
         public override void OnPlayerEnteredRoom(Photon.Realtime.Player newPlayer)
         {
-            //Agent.NetworkedAgentMotor.RefreshInstance(ref LocalPlayer, PlayerPrefab, PlayerSpawn);
+            FirstPersonPlayer.RefreshInstance(ref LocalPlayer, PlayerPrefab, PlayerSpawn);
         }
 
     }
