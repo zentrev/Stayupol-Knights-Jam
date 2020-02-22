@@ -5,10 +5,7 @@ using UnityEngine;
 public class WeaponManager : MonoBehaviour
 {
     [Header("Weapon Prefabs")]
-    [SerializeField] GameObject ThrowWeapon;
-    [SerializeField] GameObject ShootWeapon;
-    [SerializeField] GameObject LaunchWeapon;
-    [SerializeField] GameObject RollWeapon;
+    [SerializeField] GameObject WeaponBase;
     [Header("Projectiled Prefabs")]
     [SerializeField] GameObject BulletProjectile;
     [SerializeField] GameObject MolotovProjectile;
@@ -21,7 +18,7 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] GameObject PierceModifier;
 
     [Header("Player's Selections")]
-    public ProjectileBase.eProjectileType projectileSelected;
+    public ProjectileBase.EProjectileType projectileSelected;
     public WeaponBase.EWeapon weaponSelected;
     public ModifierBase.EModifier modifierSelected;
 

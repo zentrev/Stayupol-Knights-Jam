@@ -3756,7 +3756,18 @@ MonoBehaviour:
   m_Group: {fileID: 2835301856301669543}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2835301856653177141}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!1 &2835301856537458098
 GameObject:
@@ -4158,6 +4169,7 @@ GameObject:
   - component: {fileID: 2835301856653177130}
   - component: {fileID: 2835301856653177131}
   - component: {fileID: 2835301856653177140}
+  - component: {fileID: 892994192451205150}
   m_Layer: 5
   m_Name: PlayerSelectCanvas
   m_TagString: Untagged
@@ -4246,6 +4258,30 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &892994192451205150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2835301856653177141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d725a4080e8e80849aca1262c8c7e5c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponGroup: {fileID: 0}
+  projectileGroup: {fileID: 0}
+  modifierGroup: {fileID: 0}
+  selectedWeapon:
+  - {fileID: 2835301856515645683}
+  - {fileID: 2835301856812565887}
+  - {fileID: 2835301856845690966}
+  - {fileID: 2835301856964234736}
+  - {fileID: 2835301856025913256}
+  selectedProjectile: {fileID: 0}
+  selectedModifier: {fileID: 0}
+  weaponManager: {fileID: 0}
 --- !u!1 &2835301856692627128
 GameObject:
   m_ObjectHideFlags: 0
@@ -4643,7 +4679,18 @@ MonoBehaviour:
   m_Group: {fileID: 2835301856301669543}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!1 &2835301856829481810
 GameObject:

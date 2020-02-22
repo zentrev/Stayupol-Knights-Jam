@@ -6,11 +6,11 @@ public class WeaponBase : MonoBehaviour
 {
     public enum EWeapon
     {
-        NONE = 1 << 0,
-        THROWN = 1 << 1,
-        SHOOT = 1 << 2,
-        LAUNCH = 1 << 3,
-        ROLL = 1 << 4,
+        NONE = 0,
+        THROWN = 1,
+        SHOOT = 2,
+        LAUNCH = 3,
+        ROLL = 4,
     }
 
     public EWeapon weaponType = EWeapon.NONE;

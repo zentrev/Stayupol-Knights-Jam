@@ -5,16 +5,17 @@ using UnityEngine;
 
 public abstract class ProjectileBase : MonoBehaviour
 {
-    public enum eProjectileType
+    public enum EProjectileType
     {
-        BULLET,
-        GRENADE,
-        MISSILE,
-        MOLOTOV
+        NONE = 0,
+        BULLET = 1,
+        GRENADE = 2,
+        MISSILE = 3,
+        MOLOTOV = 4
     }
 
-    public eProjectileType projectileType;
-    //WeaponBase owner;
+    public EProjectileType projectileType;
+    WeaponBase owner;
     ModifierBase modifier;
 
     public Rigidbody rb;

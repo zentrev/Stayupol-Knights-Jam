@@ -9,11 +9,11 @@ public abstract class ModifierBase : MonoBehaviour
 
     public enum EModifier
     {
-        NONE = 1 << 0,
-        CLUSTER = 1 << 1,
-        RICOCHET = 1 << 2,
-        THREEWAY = 1 << 3,
-        PIERCE = 1 << 4
+        NONE = 0,
+        CLUSTER = 1,
+        RICOCHET = 2,
+        THREEWAY = 3,
+        PIERCE = 4
     }
 
     protected abstract void OnCollisionEnter(Collision collision);

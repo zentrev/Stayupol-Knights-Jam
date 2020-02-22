@@ -65,8 +65,7 @@ namespace StayupolKnights
 
 			photonView.RPC("AddPlayerToGM", RpcTarget.MasterClient);
 
-			Cursor.lockState = CursorLockMode.Locked;
-
+		
 			input.Default.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>().ConvertXYVectorToXZVector();
 			input.Default.Look.performed += ctx => lookInput = ctx.ReadValue<Vector2>();
 			input.Default.Jump.performed += ctx => Jump();
