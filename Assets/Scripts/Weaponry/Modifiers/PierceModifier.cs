@@ -28,6 +28,8 @@ public class PierceModifier : ModifierBase
             Physics.IgnoreCollision(collision.GetContact(0).thisCollider, collision.collider);
             rb.velocity = velocity;
         }
+        m_projectile.Destruct();
+
     }
 
 }
