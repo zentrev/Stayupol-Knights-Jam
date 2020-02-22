@@ -4,7 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/PunLogin.unity
+    guid: b2e5f7456fc8a1c43bfe6f96fb3f6d63
+  - enabled: 1
+    path: Assets/Scenes/KalisSnadbox.unity
+    guid: 7a2148da38cabe6469e1c655f86f29cc
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 018b9d08984a5654abb1999be34852cb,
       type: 2}
