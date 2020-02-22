@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Users;
-
+using Photon.Pun;
 namespace StayupolKnights
 {
-	public abstract class Player : MonoBehaviour
+	public abstract class Player : MonoBehaviourPun
 	{
 		public PlayerInput playerInput { get; set; }
 

@@ -3,21 +3,20 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
 using StayupolKnights.ExtensionMethods;
+using Photon.Pun;
 
 namespace StayupolKnights
 {
-	public class FirstPersonPlayer : Player
+	public class FirstPersonPlayer : Player, IPunObservable
 	{
 		FirstPersonInput input;
 		Rigidbody rb;
 
 		[Header("Camera Settings")]
 		public float lookSensitivity = 3.0f;
-		private bool _cameraZoomed; public bool cameraZoomed
-		{
+		private bool _cameraZoomed; public bool cameraZoomed {
 			get { return _cameraZoomed; }
-			set
-			{
+			set {
 				Camera playerCameraComponent = playerCamera.GetComponent<Camera>();
 				if (value) { playerCameraComponent.fieldOfView = zoomFOV; }
 				else { playerCameraComponent.fieldOfView = normalFOV; }
@@ -168,5 +167,32 @@ namespace StayupolKnights
 			clampedRotation.x = clampValue;
 			playerCamera.eulerAngles = clampedRotation;
 		}
+
+		#region Network
+
+		public static void RefreshInstance(ref FirstPersonPlayer agent, FirstPersonPlayer Prefab, Transform spawn)
+		{
+			if (agent != null)
+			{
+				spawn.position = agent.transform.position;
+				spawn.rotation = agent.transform.rotation;
+				PhotonNetwork.Destroy(agent.gameObject);
+			}
+
+			agent = PhotonNetwork.Instantiate(Prefab.gameObject.name, spawn.position, spawn.rotation).GetComponent<FirstPersonPlayer>();
+		}
+
+		public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+		{
+			if (stream.IsWriting)
+			{
+			}
+			else
+			{
+
+			}
+		}
+
+		#endregion
 	}
 }
