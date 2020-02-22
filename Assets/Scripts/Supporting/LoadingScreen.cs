@@ -98,6 +98,7 @@ public class LoadingScreen : Singleton<LoadingScreen>
     {
         // Enable the loading screen:
         if (LoadingPanel)  LoadingPanel.SetActive(true);
+        if (anim)  anim.SetTrigger("FadeIn");
         // Store the reference:
         currentLoadingOperation = loadingOperation;
         // Stop the loading operation from finishing, even if it technically did:
