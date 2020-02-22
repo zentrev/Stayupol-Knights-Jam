@@ -11,7 +11,7 @@ public class RicochetModifier : ModifierBase
 
     private void OnEnable()
     {
-        rb = GetComponent<Rigidbody>();
+        m_projectile.TryGetComponent(out rb);
     }
 
     private void Update()

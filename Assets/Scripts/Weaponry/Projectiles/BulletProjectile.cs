@@ -7,10 +7,10 @@ public class BulletProjectile : ProjectileBase
 {
     public GameObject BloodHitPrefab;
 
-    public override void Fire(Vector3 velocity)
+    public override void Fire(float power, bool gravity)
     {
-        rb.AddForce(velocity, ForceMode.VelocityChange);
-
+        rb.useGravity = gravity;
+        rb.AddForce(transform.forward * power, ForceMode.VelocityChange);
     }
 
     public override void Destruct()
