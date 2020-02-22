@@ -23,9 +23,8 @@ public class WeaponManager : MonoBehaviour
     [Header("Player's Selections")]
     public ProjectileBase.eProjectileType projectileSelected;
     public WeaponBase.EWeapon weaponSelected;
-    //Mod selected
+    public ModifierBase.EModifier modifierSelected;
 
-        //Ref to player
     Transform weaponSpawnPosition;
 
     public void SetUpSelections()
