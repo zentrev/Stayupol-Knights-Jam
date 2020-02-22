@@ -25,7 +25,7 @@ public abstract class ProjectileBase : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    public abstract void Fire(Vector3 velocity);
+    public abstract void Fire(float power, bool gravity);
 
     public abstract void Destruct();
 

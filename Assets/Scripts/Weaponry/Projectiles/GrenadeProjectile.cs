@@ -8,9 +8,10 @@ public class GrenadeProjectile : ProjectileBase
     public float Range;
     public GameObject ExplosionPrefab;
 
-    public override void Fire(Vector3 velocity)
+    public override void Fire(float power, bool gravity)
     {
-        rb.AddForce(velocity, ForceMode.VelocityChange);
+        rb.useGravity = gravity;
+        rb.AddForce(transform.forward * power, ForceMode.VelocityChange);
         rb.AddTorque(new Vector3(Random.value * 90.0f, 0, 0), ForceMode.Impulse);
     }
 
