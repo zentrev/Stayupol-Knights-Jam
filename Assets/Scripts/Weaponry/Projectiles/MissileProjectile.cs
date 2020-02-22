@@ -12,9 +12,10 @@ public class MissileProjectile : ProjectileBase
     public float boost;
     public GameObject ExplosionPrefab;
 
-    public override void Fire(Vector3 velocity)
+    public override void Fire(float power, bool gravity)
     {
-        rb.AddForce(velocity, ForceMode.VelocityChange);
+        rb.useGravity = gravity;
+        rb.AddForce(transform.forward * power, ForceMode.VelocityChange);
         fired = true;
     }
 
