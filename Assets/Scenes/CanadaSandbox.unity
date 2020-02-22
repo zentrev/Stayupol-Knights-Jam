@@ -584,6 +584,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2987303079443150120, guid: 02c5c085ea2ee1f4eb2657c1f9534a39,
+        type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2987303079443150122, guid: 02c5c085ea2ee1f4eb2657c1f9534a39,
         type: 3}
       propertyPath: m_Name
@@ -607,7 +612,7 @@ PrefabInstance:
     - target: {fileID: 2987303079443150127, guid: 02c5c085ea2ee1f4eb2657c1f9534a39,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.9209895
+      value: -3.13
       objectReference: {fileID: 0}
     - target: {fileID: 2987303079443150127, guid: 02c5c085ea2ee1f4eb2657c1f9534a39,
         type: 3}
@@ -671,7 +676,7 @@ PrefabInstance:
     - target: {fileID: 8792889844240300761, guid: e44440be46510b1499b63f7d4563ad83,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.9209895
+      value: -4.19
       objectReference: {fileID: 0}
     - target: {fileID: 8792889844240300761, guid: e44440be46510b1499b63f7d4563ad83,
         type: 3}
@@ -717,6 +722,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MolotovHeld
+      objectReference: {fileID: 0}
+    - target: {fileID: 8792889844240300764, guid: e44440be46510b1499b63f7d4563ad83,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8792889844240300766, guid: e44440be46510b1499b63f7d4563ad83,
+        type: 3}
+      propertyPath: moveWithTransform
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e44440be46510b1499b63f7d4563ad83, type: 3}
