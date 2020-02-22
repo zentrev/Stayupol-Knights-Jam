@@ -41,6 +41,8 @@ namespace StayupolKnights
 		Vector2 lookInput;
 		#endregion
 
+		private bool inControl = true;
+
 
 		#region MonoBehavior
 
@@ -61,6 +63,8 @@ namespace StayupolKnights
 				Destroy(playerCamera.gameObject);
 			}
 
+			photonView.RPC("AddPlayerToGM", RpcTarget.MasterClient);
+
 			Cursor.lockState = CursorLockMode.Locked;
 
 			input.Default.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>().ConvertXYVectorToXZVector();
@@ -70,7 +74,7 @@ namespace StayupolKnights
 
 		void Update()
 		{
-			if (photonView.IsMine)
+			if (photonView.IsMine && inControl)
 			{
 				Look();
 				Move();
@@ -187,6 +191,12 @@ namespace StayupolKnights
 			playerCamera.eulerAngles = clampedRotation;
 		}
 
+		public void FreezePlayer(bool freeze)
+		{
+			rb.isKinematic = freeze;
+			inControl = !freeze;
+		}
+
 		#region Network
 
 		public static void RefreshInstance(ref FirstPersonPlayer agent, FirstPersonPlayer Prefab, Transform spawn)
@@ -209,6 +219,15 @@ namespace StayupolKnights
 			else
 			{
 
+			}
+		}
+
+		[PunRPC]
+		void AddPlayerToGM()
+		{
+			if(PhotonNetwork.IsMasterClient)
+			{
+				GameManager.Instance.players.Add(this);
 			}
 		}
 
