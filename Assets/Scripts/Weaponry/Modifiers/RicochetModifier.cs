@@ -26,6 +26,8 @@ public class RicochetModifier : ModifierBase
             bounceCount--;
             Ricochet(collision.contacts[0].normal);
         }
+        m_projectile.Destruct();
+
     }
 
     private void Ricochet(Vector3 collision)
