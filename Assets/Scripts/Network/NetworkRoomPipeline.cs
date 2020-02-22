@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using StayupolKnights;
-using UnityEditor.SceneManagement;
 
 namespace Network
 {
