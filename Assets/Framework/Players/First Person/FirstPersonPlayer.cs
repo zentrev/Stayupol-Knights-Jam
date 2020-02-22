@@ -33,6 +33,9 @@ namespace StayupolKnights
 		public float airMovePercent = 0.35f;
 		public bool grounded;
 
+		[Header("Componets")]
+		[SerializeField] SkinnedMeshRenderer m_characterModel = null;
+
 		#region Input Variables
 		Vector3 moveInput;
 		Vector2 lookInput;
@@ -46,6 +49,18 @@ namespace StayupolKnights
 			input = new FirstPersonInput();
 			TryGetComponent(out rb);
 			playerCamera = GetComponentInChildren<Camera>().transform;
+
+			// Set vars if my photonView
+			if (photonView.IsMine)
+			{
+				Debug.Log("Hide player");
+				m_characterModel.enabled = false;
+			}
+			else
+			{
+				Destroy(playerCamera.gameObject);
+			}
+
 			Cursor.lockState = CursorLockMode.Locked;
 
 			input.Default.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>().ConvertXYVectorToXZVector();
