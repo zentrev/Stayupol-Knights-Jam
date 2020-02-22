@@ -21,7 +21,7 @@ public class UIManager : Singleton<UIManager>
 
     private void Update()
     {
-        if (LoadingScreen.Instance.IsLoadingOpen)
+        if (LoadingScreen.Instance.isLoading)
         {
             AllUI = FindObjectsOfType<UIBaseClass>().ToList();
             foreach (UIBaseClass ui in AllUI)
@@ -47,7 +47,7 @@ public class UIManager : Singleton<UIManager>
 
     public void SetCurrentOpen(UIBaseClass other)
     {
-        if (!LoadingScreen.Instance.IsLoadingOpen)
+        if (!LoadingScreen.Instance.isLoading)
         {
             if (CurrentlyOpen)
             {
