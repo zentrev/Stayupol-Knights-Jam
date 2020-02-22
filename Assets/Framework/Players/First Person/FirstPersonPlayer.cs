@@ -55,8 +55,12 @@ namespace StayupolKnights
 
 		void Update()
 		{
-			Look();
-			Move();
+			if (photonView.IsMine)
+			{
+				Look();
+				Move();
+			}
+
 			// if (player.GetButtonDown("ToggleZoom")) { Zoom(); }
 		}
 
