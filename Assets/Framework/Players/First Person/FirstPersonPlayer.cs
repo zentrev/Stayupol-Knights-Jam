@@ -45,7 +45,7 @@ namespace StayupolKnights
 		void Awake()
 		{
 			input = new FirstPersonInput();
-			rb = GetComponent<Rigidbody>();
+			TryGetComponent(out rb);
 			playerCamera = GetComponentInChildren<Camera>().transform;
 			Cursor.lockState = CursorLockMode.Locked;
 
