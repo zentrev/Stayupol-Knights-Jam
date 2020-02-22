@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3769807866268071399}
   - component: {fileID: 2248558578458380374}
   - component: {fileID: 2388117885249854430}
+  - component: {fileID: 8186821178499610454}
   m_Layer: 0
   m_Name: Wepon
   m_TagString: Untagged
@@ -94,6 +95,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8186821178499610454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3147511552207972197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 099a6b13dc87ead488532066087fbf4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponType: 4
+  fireVelocity: 10
+  muzzle: {fileID: 7131650097247515177}
+  projectile: {fileID: 0}
 --- !u!1 &4597772229693653634
 GameObject:
   m_ObjectHideFlags: 0
