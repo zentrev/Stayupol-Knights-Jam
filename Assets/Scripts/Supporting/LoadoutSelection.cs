@@ -14,10 +14,10 @@ public class LoadoutSelection : MonoBehaviour
 
     public void Start()
     {
-        weaponManager = GetComponentInParent<WeaponManager>();
+        weaponManager = GameObject.FindObjectOfType<Network.NetworkRoomPipeline>().LocalPlayer.GetComponent<WeaponManager>();
     }
 
-    public void StartGame()
+    public void ReadyUp()
     {
         //Sets the weapon manager to the correct Weapon for the player
        switch(selectedWeapon.First(e => e.isOn).name)
@@ -76,7 +76,6 @@ public class LoadoutSelection : MonoBehaviour
                 weaponManager.modifierSelected = ModifierBase.EModifier.PIERCE;
                 break;
        }
+        Debug.Log(weaponManager.weaponSelected.ToString() + " " + weaponManager.projectileSelected.ToString() + " " + weaponManager.modifierSelected.ToString());
     }
-
-
 }
